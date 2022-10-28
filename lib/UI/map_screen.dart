@@ -8,22 +8,26 @@ class  MapScreen extends StatelessWidget{
   MapController controlle =Get.find();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: GoogleMap(
-        mapType: MapType.normal,
-        initialCameraPosition: controlle.kGooglePlex,
-        onMapCreated: (GoogleMapController controller) {
-          controlle.controller.complete(controller);
-        },
-      ),
-
-        floatingActionButton: FloatingActionButton.extended(
-          onPressed: controlle.goToTheLake,
-          label: Text('To the lake!'),
-          icon: Icon(Icons.directions_boat),
+    return SafeArea(
+      child: Scaffold(
+        body: GoogleMap(
+          mapType: MapType.normal,
+          initialCameraPosition: controlle.kGooglePlex,
+          onMapCreated: (GoogleMapController controller) {
+            controlle.controller.complete(controller);
+          },
         ),
 
+          floatingActionButton: FloatingActionButton.extended(
+            onPressed: controlle.goToTheLake,
+            label: Text('To the lake!'),
+            icon: Icon(Icons.directions_boat),
+          ),
+
+      ),
     );
   }
+
+
 
 }
