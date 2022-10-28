@@ -3,6 +3,7 @@ import 'package:get/get_navigation/get_navigation.dart';
 import 'package:payments/util/routes/app_routes.dart';
 
 void main() {
+
   runApp(const MyApp());
 }
 
